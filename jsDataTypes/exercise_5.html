@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var erty = "Erty:Seidohl:Jan11:CodeCraft";
+		
+		var dave = "Dave:Gray:Sep16:CodeCraft";
+		
+		var instructors = [
+			erty.split(":"),
+			dave.split(":")
+		];
+		
+		//TODO: console.log Erty and Dave's last name and birthday with a dash: "Name - Birthday"
+        
+        // one way -- variables
+        e = instructors[0][1];
+        eb = instructors[0][2];
+        d = instructors[1][1];
+        db = instructors[1][2];
+        console.log(e + " - " + eb + " " + d + " - " + db)
+        
+        // another way -- direct pieces from arrays
+        console.log(instructors[0][1] + " - " + instructors[0][2]);
+        console.log(instructors[1][1] + " - " + instructors[1][2]);
+        
+        //with a loop
+        var index = 0;
+        var inst = instructors[index];
+        while(index < instructors.length) {
+            console.log(inst[1] + " - " + inst[2]);
+            index += 1;
+        }
+        
+	</script>
+</body>
+</html>

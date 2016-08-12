@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		/*
+			Exercise 2
+			How many different variables named "a" are created here?
+		*/
+// there are a total of three variable "a"s created
+		function createFunction() {
+			var a = function () { // here is one created in a local scope 
+				var a = "b"; // here one is created at a lower local scope
+				return a; // here the one directly above is returned to the function above 
+			};
+			return a; // this is the variable function being returned to the global scope
+		}
+		var a = createFunction(); // this variable "a" is created at a global scope and used as a reference to the first function created.
+		console.log(a()); // and is called here.
+	</script>
+</body>
+
+</html>

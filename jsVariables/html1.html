@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        var weight = prompt("How much do you weigh?(lbs)");
+        var feet = prompt("How tall are you?(in feet)");
+        var inches = prompt("How tall many inches?");
+        kilos = weight / 2.2;
+        mfeet = feet * .3048;
+        minch = inches * .0254;
+        meters = mfeet + minch;
+        BMI = kilos / Math.pow(meters, 2);
+
+        document.write(BMI);
+    </script>
+</body>
+</html>

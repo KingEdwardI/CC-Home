@@ -1,0 +1,7 @@
+http://159.203.175.239:8080/instructions.txt
+
+http://159.203.175.239:8080/movies.txt
+
+http://159.203.175.239:8080/checkouts.txt
+
+test the data on smaller data blocks than what is provided.

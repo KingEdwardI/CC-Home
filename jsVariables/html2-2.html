@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var CF = prompt("Would you like to convert FROM Celcius or Farenheit? (Type C or F)");
+    if (CF == "C") {
+        var C = parseFloat(prompt("Enter a temperature in Celcius:"))
+        var CtoF = (C/ (5/9)) + 32
+        document.write("Temp in Farenheit: " + CtoF)
+    } else if (CF == F) {
+        var F = parseFloat(prompt("Enter a temperature in Farenheit:"))
+        var FtoC = ((F - 32) * (5/9))
+        document.write("Temp in Celcius: " + FtoC)
+    } else {
+        document.write("INVALID COMMAND")
+    }
+
+</script>
+</body>
+</html>

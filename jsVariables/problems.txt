@@ -1,0 +1,21 @@
+1.
+
+Body Mass Index (BMI) is a measure of healthy weight.
+It can be calculated by taking your weight in kilograms and dividing by the square of your height in meters. Write a program that prompts the user to enter a weight in pounds and a height in feet and inches and displays the user's BMI value. To convert the users weight in pounds to their weight in kilograms you will need to use the fact that there are 2.2 pounds in one kilogram.
+
+
+2.
+
+The temperature T in degrees Celsius (°C) is equal to the temperature T in degrees Fahrenheit (°F) minus 32, times 5/9.
+Write a program which prompts the user which temperature scale they wish to use, and
+displays the temperature in the other scale.
+
+
+3.
+
+Add Kelvin to the previous program
+
+4.
+
+Create a program which prompts the user to enter five test scores. Then, output the average of the five test scores.
+

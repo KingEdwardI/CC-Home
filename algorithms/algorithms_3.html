@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum of Even Fibonacci Numbers</title>
+</head>
+<body>
+<script>
+
+// Fibonacci
+    var f = 0;
+    var k = 1;
+    var g;
+    var p = 0;
+    while (f < 2000000) {
+        g = f + k;
+        f = k;
+        k = g;
+        // addition of evens
+        if (f % 2 === 0) {
+            p += f;
+        }
+    }
+    console.log("ans = " + p)
+
+</script>
+</body>
+</html>

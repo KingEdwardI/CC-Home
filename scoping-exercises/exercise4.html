@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		/*
+			There are a lot of errors in this code due to global variables and hoisting. Can you fix it?
+			It is supposed to print out the sum, multiple, and average of a group of numbers.
+		*/
+
+
+		var multiply = function (list) {
+            var multiple = 1; // need to establish localy and start with a number that won't mult to 0
+			for (i = 0; i < list.length; i++) {
+				multiple = multiple * list[i];
+			}
+			return multiple;
+		};
+
+
+		var sum = function (list) {
+            var sum = 0; // need to establish var locally
+			for (i = 0; i < list.length; i++) {
+				sum = sum + list[i]; // addition not multiplication
+			}
+			return sum;
+		};
+		var average = function (list) { // need to call list
+			avg =  sum(list) / list.length;
+            return avg;
+		};
+
+		var list = [1, 2, 3, 4, 5];
+		var listTwo = [10, 11, 12, 13];
+		var listThree = [4, 23, 12, 10, 8];
+
+		//Hey! Don't mess with these. the problems are up above.
+		console.log(list, multiply(list), sum(list), average(list));
+		console.log(listTwo, multiply(listTwo), sum(listTwo), average(listTwo));
+		console.log(listThree, multiply(listThree), sum(listThree), average(listThree));
+
+		/*
+		Expected Output:
+			[1,2,3,4,5] 120 15 3
+			[10, 11, 12, 13] 17160 46 11.5
+			[4, 23, 12, 10, 8] 88320 57 11.4
+		*/
+	</script>
+</body>
+
+</html>

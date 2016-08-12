@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>insert dash between odd numbers</title>
+</head>
+<body>
+<script>
+
+var num = (prompt("Enter a number: "));
+var dig = num.split("");
+len = dig.length;
+var fin = '';
+for(var i=0; i < len; i++){
+    var q = dig[i];
+    var j = dig[1+i];
+        if (q % 2 === 1 && j % 2 === 1) {
+            fin += dig[i]+"-";
+        } else {
+            fin += dig[i];
+        }
+}
+console.log(fin);
+/*
+debugger;
+for (i; i< len; i++ ){
+    if (dig[i] % 3 === 0 && dig[i+1] % 3 === 0){
+        dig.splice(dig[i], "-")
+    }
+    console.log(dig)
+}
+*/
+</script>
+</body>
+</html>

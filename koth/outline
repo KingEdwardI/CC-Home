@@ -1,0 +1,23 @@
+Idea for the App
+    King of the Server
+
+API endpoints - what are the places we can visit
+    GET /
+        Main Page
+    POST /
+        api/click
+            post clicks for yourself
+//        api/register
+//            register a new user
+//        api/login
+//            log into the server
+
+DB Schema
+    What do we need to store in the DB to make the app work
+
+    User:
+        _id
+        clickCount
+//        username
+//        password
+

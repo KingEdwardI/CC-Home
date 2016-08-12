@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>King Edwards Castle</title>
+</head>
+<body>
+
+<script>
+
+
+function start(){
+    var startAns = prompt("You wake up in a dimly lit room, with a terrible headache. There are torches on the wall and bones on the floor. There is a door to the North and West of you. You take one of the torches off the wall and decide to continue on your way. Which way do you go?(Go North or Go West)").toLowerCase();
+    while (true){
+        if (startAns == "go west"){
+            shieldRoom()
+        } else if (startAns == "go north"){
+            dragonRoomNS()
+        } else {
+            startAns = prompt("You can't go that way or invalid input was entered, try again (Go North or Go West)").toLowerCase();
+        }
+    }
+}
+function originalRoom(){
+    var cont = prompt("You are back in the room that you started in, you can continue North, or go back to the room you just came from (Go North or Go West)").toLowerCase();
+    while(true){
+        if(cont == "go north"){
+            dragonRoom();
+        } else if (cont == "go west"){
+            emptyRoom()
+        } else {
+            cont = prompt("You can't go that way or invalid input was entered, try again (Go North or Go West)").toLowerCase();
+        }
+    }
+
+}
+function emptyRoom(){
+    var empt = prompt("You find yourself in the room you you found the shield, there is only one exit to the East. You can try to look around again if you choose (Go East, or Look Around)").toLowerCase();
+    while(true){
+        if(empt == "go east"){
+            originalRoom();
+        } else if(empt == "look around"){
+            empt = prompt("There is a pedastal in the middle of the room, a door behind you that leads roaches crawling up the walls and message on the wall that says 'TURN BACK' (Go East)").toLowerCase();
+                if(empt == "go east"){
+                    originalRoom()
+                } else{
+                    emptyRoom()
+                }
+        } else {
+            empt = prompt("You can't go that way or invalid input, try again. (Go East or Look Around)").toLowerCase();
+        }
+    }
+}
+function originalRoomNS(){
+    var cont = prompt("You are back in the room that you started in, you can continue North, or head west. (Go North or Go West)").toLowerCase();
+    while(true){
+        if(cont == "go north"){
+            dragonRoomNS()
+        } else if (cont == "go west"){
+            shieldRoom()
+        } else {
+            cont = prompt("You can't go that way or invalid input was entered, try again").toLowerCase();
+        }
+    }
+}
+function dragonRoomNS(){
+    var nope = prompt("There is a dragon blocking your path, you cannot pass (Go Back)").toLowerCase();
+    while(true){
+        if(nope == "go back"){
+            originalRoomNS();
+        } else {
+            nope = prompt("The dragon tries to burn you because your input is invalid, try again (Go Back)").toLowerCase();
+                if(nope == "go back"){
+                    originalRoomNS();
+                }
+        }
+    }
+}
+function dragonRoom(){
+    var win = prompt("You enter into the room and there is a dragon blocking your path. You have the shield and can defend yourself do you continue or turn back out of fear? (Charge or Chicken Out)").toLowerCase();
+    while(true){
+        if(win == "charge"){
+            alert("You rush past the dragon fending off its flames with your shield, making it to the door. The hallway door is locked, so you crawl through a sewer tunnel and find yourself at the edge of a lake. You swim across and are home free.");
+            exit();
+        } else if (win == "chicken out"){
+            alert("You run away as the dragon roars at your back");
+            originalRoom();
+        } else {
+        	win = prompt("The dragon roars at your invalid input, try again (Charge or Chicken Out")
+        }
+    }
+}
+
+function shieldRoom(){
+    var shieldAns = prompt("You find yourself in a large room with a pedastal in the middle, upon it rests a shield. Do you take the shield or go back without it? (Take Shield or Go Back)").toLowerCase();
+    while(true){
+        if(shieldAns == "take shield"){
+            var power = prompt("You take the shield and feel a surge of power you can now defend youself against any challenge you may face. You can look around the room some more or go back the way you came. (Go East or Look Around)").toLowerCase();
+                if(power == "go east"){
+                    originalRoom();
+                } else if(power = "look around"){
+                    var newPower = prompt("There is a pedastal in the middle of the room, a door behind you that leads back the way you came, and message on the wall that says 'TURN BACK' (Go East)").toLowerCase();
+                    if(newPower == "go east"){
+                        originalRoom();
+                    } else if (newPower == "look around"){
+                        emptyRoom();
+                    } else {
+                    	newPower = prompt("You can't go that way or invalid input, try again (Go East)").toLowerCase();
+                    }
+                }
+        } else if(shieldAns == "go back"){
+            originalRoomNS();
+        } else{ 
+            shieldAns = prompt("You can't do that, or invalid input try again (Go East or Look Around)").toLowerCase();
+        }
+    }
+}
+
+alert("Press Ok to begin the game")
+start()
+</script>
+
+</body>
+</html>

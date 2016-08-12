@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PokéTrack - Map</title>
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"
+	></script>
+	<script>
+
+	function showAllPokemon() {
+		$.get(
+			'/sighting', // GET the route /sighting
+			function(data){ //handle the data it returns
+				$('#output').html(""); //reset our output element
+				for (var i = 0; i < data.length; i++) { //for each datum
+                    var idnum = data[i].pokemonId;
+					$('#output').append( //append a new paragraph to #output
+						'<p>' + data[i].pokemonId + " " + data[i].locStr +  " " + '<img src="./img/sprites/' + idnum + '.png">' +  '</p>'
+					);
+				}
+			},
+			'json' //interpret the incoming data as a JSON object (JSON.parse)
+		);
+	}
+
+	function sendPokemon() {
+		$.post(
+			'/sighting', // route
+			{
+				locStr: $('#locStr').val(),
+				pokemonId: $('#pokemonId').val()
+			}, //req.body object
+			function(data){
+				if (data == "success") {
+					showAllPokemon();
+				}
+			} //callback function
+		);
+	}
+
+	$(document).ready(function() {
+	//	showAllPokemon();
+		$('#submit').click(sendPokemon);
+	});
+    
+    function showLocal(){
+    console.log("showing Pokemon location");
+    $.get(
+        '/sighting/city/' + $('#localIds').val(), // GET the route /sighting
+        function(data){ //handle the data it returns
+            $('#outputLocal').html(""); //reset our output element
+            for (var i = 0; i < data.length; i++) { //for each datum
+                 var idnum = data[i].pokemonId;
+                    $('#outputLocal').append( //append a new paragraph to #output
+                        '<p>' + data[i].locStr + " " + data[i].pokemonId +  " " + '<img src="./img/sprites/' + idnum + '.png">' +  '</p>'
+                    );
+            }
+        },
+        'json' //interpret the incoming data as a JSON object (JSON.parse)
+    );
+    }
+
+	$(document).ready(function() {
+		$('#getLoc').click(showLocal);
+	});
+
+    function showId(){
+    console.log("showing Pokemon ids");
+    $.get(
+        '/sighting/id/' + $('#pokeId').val(), // GET the route /sighting
+        function(data){ //handle the data it returns
+            $('#outputId').html(""); //reset our output element
+            for (var i = 0; i < data.length; i++) { //for each datum
+                var idnum = data[i].pokemonId;
+                    $('#outputId').append( //append a new paragraph to #output
+                        '<p>' + " " + data[i].locStr + " " + '<img src="./img/sprites/' + idnum + '.png">' +  '</p>'
+                    );
+            }
+        },
+        'json' //interpret the incoming data as a JSON object (JSON.parse)
+    );
+    }
+
+	$(document).ready(function() {
+		$('#getId').click(showId);
+	});
+    
+    $(document).ready(function(){
+        $('#clearAll').click(function(){
+            $('#output').empty();
+        });
+    });
+
+    $(document).ready(function(){
+        $('#clearLoc').click(function(){
+            $('#outputLocal').empty();
+        });
+    });
+
+    $(document).ready(function(){
+        $('#clearId').click(function(){
+            $('#outputId').empty();
+        });
+    });
+
+
+    </script>
+    <link rel='stylesheet' type='text/css' href='./css/mapstyle.css'>
+    <link rel='stylesheet' type='text/css' href="./css/bootstrap.css">
+</head>
+<body>
+    <div class="page-header" id='page_header'>
+        <div class='head-left'>
+            <div class='head-left-wrapper'>
+                <h1>PokeTrack</h1>
+            </div>
+        </div>
+        <div class='head-right-wrapper'>
+            <a href='./login.html'>
+                <div class='head-right'>Login</div>
+            </a>
+            <a href='./map.html'>
+                <div class='head-right'>Map</div>
+            </a>
+            <a href='./index.html'>
+                <div class='head-right'>Home</div>
+            </a>
+        </div>
+    </div>
+
+    <div class='post-location col-md-4 input'>
+        <div class='col-md-6'>
+            <label for="locStr" class='input-label'>Location: <input type="text" id="locStr" class='input-text'></label>
+        </div>
+        <div class='col-md-6'>
+            <label for="pokemonId" class='input-label'>Pokemon: <input type="text" id="pokemonId" class='input-text'></label>
+        </div>
+        <input type="button" id="submit" value="Send Loc">
+        <input type="button" id="clearAll" value="Clear">
+        <div class='output-all' id="output"></div>
+    </div>
+    <div class='nearby col-md-4 input'>
+        <label for="localIds" class='input-label'>Location: <input type="text" id="localIds" class='input-text'></label>
+        <input type="button" id="getLoc" value="Show Local">
+        <input type="button" id="clearLoc" value="Clear Local">
+        <div class='output-all' id="outputLocal"></div>
+    </div> 
+    <div class='identity col-md-4 input'>
+         <label for="pokeId" class='input-label'>Pokemon: <input type="text" id="pokeId" class='input-text'></label>
+        <input type="button" id="getId" value="Show Id">
+        <input type="button" id="clearId" value="Clear Id">
+        <div class='output-all' id="outputId"></div>
+    </div>
+</body>
+</html>

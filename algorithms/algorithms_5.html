@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reverse Number Guessing Game</title>
+</head>
+<body>
+<script>
+debugger;
+var range = prompt("Select a range for the computer to guess from.", "100");
+var ans = "";
+var guesses = [];
+var thisGuess = 0;
+var lastGuess = 0;
+var countGuess = 0;
+while(range > 1) {
+    range = Math.floor(range/2);
+    guesses.push(range);
+}
+thisGuess = guesses[0];
+console.log(guesses);
+var i = 0;
+ans = prompt("The computer guess is " + thisGuess + ". Too high, enter 'h'. Too low, enter 'l'. Correct, enter 'y'");
+while(ans != 'y') {
+    if(i < guesses.length - 1){
+    i++;
+    }
+    lastGuess = thisGuess;
+        if(ans == 'h'){
+            console.log("too high");
+            thisGuess = lastGuess - guesses[i];
+            console.log(thisGuess + " " + lastGuess);
+            ans = prompt("The computer guess is " + thisGuess + ". Too high, enter 'h'. Too low, enter 'l'. Correct, enter 'y'");
+            countGuess++;
+        }
+        else if(ans == 'l'){
+            console.log("too low");
+            thisGuess = lastGuess + guesses[i];
+            console.log(thisGuess + " " + lastGuess);
+            ans = prompt("The computer guess is " + thisGuess + ". Too high, enter 'h'. Too low, enter 'l'. Correct, enter 'y'");
+            countGuess++;
+        }
+        else {
+            console.log("invalid");
+            ans = prompt("INVALID INPUT! " + "The computer guess is " + thisGuess + ". Too high, enter 'h'. Too low, enter 'l'. Correct, enter 'y'");
+            }
+    }
+var again = confirm("Hooray the computer guessed your number. It took " + countGuess + "guesses. Click Okay to play again. Cancel to quit");
+if (again != false){
+    location.reload();
+}
+</script>
+</body>
+</html>

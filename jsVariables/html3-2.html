@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var CFK = prompt("Would you like to convert FROM Celcius, Farenheit, or Kelvin? (Type C, F, or K)").toUpperCase();
+    if (CFK == "C") {
+        var FK = prompt("Convert Celcius TO Farenheit or Kelvin? (type F or K)").toUpperCase();
+            if (FK == "F"){
+                var CtoF = parseFloat(prompt("Enter a temperature in Celcius:"));
+                var F = (CtoF / (5/9)) + 32;
+                document.write("Temp in Farenheit: " + F);
+            } else if (FK == "K"){
+                var CtoK = parseFloat(prompt("Enter a temperature in Celcius:"));
+                var K = CtoK + 273.15;
+                document.write("Temp in Kelvin: " + K);
+            } else {
+                document.write("INVALID ENTRY");
+            }
+    } else if (CFK == "F") {
+        var CK = prompt("Convert Farenheit TO Celcius or Kelvin? (Type C or K)").toUpperCase();
+            if (CK == "C"){
+                var FtoC = parseFloat(prompt("Enter a temperature in Farenheit: "));
+                var C = ((FtoC - 32) * (5/9));
+                document.write("Temp in Celcius: " + C);
+            } else if (CK == "K"){
+                var FtoK = parseFloat(prompt("Enter a temperature in Farenheit: " ));
+                var K = ((FtoK + 459.67) * (5/9));
+                document.write("Temp in Kelvin: " + K);
+            } else {
+                document.write("INVALID ENTRY");
+            }
+    } else if (CFK == "K") {
+        var CF = prompt("Convert Kelvin TO Celscius or Farenheit? (Type C or F").toUpperCase;
+            if (CF == "C"){
+                var KtoC = parseFloat(prompt("Enter a temperature in Kelvin: "));
+                var C = KtoC - 273.15;
+                document.write("Temp in Celcius: " + C);
+            } else if (CF == "F") {
+                var KtoF = parseFloat(prompt("Enter a temperature in Kelvin: "));
+                var F = (KtoF * (9/5) - 459.67);
+                document.write("Temp in Farenheit: " + F);
+            } else {
+                document.write("INVALID ENTRY");
+            } 
+    } else {
+        document.write("YA DONE GOOFED ALREADY");
+    }
+</script>
+</body>
+</html>

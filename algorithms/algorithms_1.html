@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reverse Text Method</title>
+</head>
+<body>
+<script>
+/* Easy Way
+var foo = "Hello World".split("");
+var bar = foo.reverse();
+var raboof = bar.join("");
+console.log(raboof);
+*/
+
+// Hard Way
+var stuff = "Hello World".split("");
+var count = stuff.length;
+var reverse = [];
+while (count > 0) {
+    reverse.push(stuff.pop(count));
+    count -= 1;
+    var backward = reverse.join("");
+    }
+console.log(backward)
+
+</script>
+</body>
+</html>
