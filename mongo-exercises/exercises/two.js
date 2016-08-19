@@ -19,7 +19,6 @@ module.exports = function(mongoose, Checkout, Movie) {
                 for( var i = 0; i < res.length; i++ ) {
                     idnum.push(res[i]._id);
                 }
-                console.log(idnum);
 
                 Checkout.distinct(
                     "userId",
@@ -28,7 +27,7 @@ module.exports = function(mongoose, Checkout, Movie) {
                         if (err) {
                             return console.log(err);
                         } else {
-                            console.log("The users: ", res.sort().join(", "), "--", res.length, " out of 100 -- checked out at least one LOTR movies.");
+                            console.log("The users: ", res.sort().join(", "), "\n ------- \n", res.length, " out of 100 \n ------- \n checked out at least one LOTR movies.");
                         }
                     }
                 );

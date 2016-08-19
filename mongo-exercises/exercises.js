@@ -20,9 +20,11 @@ var example = require('./exercises/example.js');
 var exerciseOne = require('./exercises/one.js');
 var exerciseTwo = require('./exercises/two.js');
 var exerciseThree = require('./exercises/three.js');
+var exerciseFour = require('./exercises/four.js');
 
 // Run Exercises
 example(mongoose, Checkout, Movie);
 exerciseOne(mongoose, Checkout, Movie);
 exerciseTwo(mongoose, Checkout, Movie);
 exerciseThree(mongoose, Checkout, Movie);
+exerciseFour(mongoose, Checkout, Movie);
