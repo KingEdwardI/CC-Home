@@ -15,7 +15,7 @@ module.exports = function(mongoose, Checkout, Movie) {
         console.log(err);
       } else {
       top = [];
-      months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','nov','dec'];
+      months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
       var topForMonth = 0;
       var currentMonth = '';
         for (var i = 0; i < res.length; i++) {
@@ -29,15 +29,14 @@ module.exports = function(mongoose, Checkout, Movie) {
             top.push(res[i]);
           }
         }
-        console.log("@@@@@", top, top.length)
         var byMonth = [];
         var movies = [];
         for (var k = 0; k < months.length; k++) {
           for (var l = 0; l < top.length; l++){
             if(top[l].month == months[k]){
               byMonth.push(top[l]);
+              movies.push(top[l].movie);
             }
-          movies.push(top[l].movie);
           }
         }
         console.log("#####", byMonth, byMonth.length);
@@ -49,12 +48,21 @@ module.exports = function(mongoose, Checkout, Movie) {
             } else {
               title = [];
               for (var u = 0; u < res.length; u++){
-                title.push(res[u].title);
+                for ( var p = 0; p < res.length + 2; p++ ){
+                  if(res[u]._id == byMonth[p].movie){
+                    title.push({id: res[u]._id, title: res[u].title});
+                  }
+                }
               }
               console.log("$$$$$", title, title.length);
             }
             for( var y = 0; y < byMonth.length; y++ ){
-              console.log("@#$%&", " Month: ", byMonth[y].month, " Title: '" + title[y] + "' Checkouts: ", byMonth[y].total);
+              for( var x = 0; x < title.length; x++ ){
+                if( title[x].id == byMonth[y].movie ){
+                console.log("@#$%&", " Month: ", byMonth[y].month, " Title: '" + title[x].title  + "' Checkouts: ", byMonth[y].total);
+                title.splice(y,1);
+                }
+              }
             }
           }
         );
