@@ -140,9 +140,10 @@ var chooseRandImg = [
     "url(./img/slowpoke.jpg)",
     "url(./img/squirtle.jpg)"
 ]
-    var chosenImg = image[Math.floor(Math.random() * image.length)];
-    return chosenImg;
-
+function chooseImg(images){
+  var image = images[Math.floor(Math.random() * images.length)];
+  return image
+}
 document.getElementById("paddle_1").style.backgroundImage=chooseImg(chooseRandImg);
 document.getElementById("paddle_2").style.backgroundImage=chooseImg(chooseRandImg);
 
@@ -270,3 +271,4 @@ document.getElementById("paddle_2").style.backgroundImage=chooseImg(chooseRandIm
 </script>
 
 </body>
+</html>

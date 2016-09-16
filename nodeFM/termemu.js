@@ -26,7 +26,7 @@ var useStdin = function() {
                 break;
             case 'rmdir': // currently does not work & crashed the program
                 if(inputSplit[1].substring(0,3) == '..'){
-                    console.log("You cannot remove anything outside of the current directory")
+                    console.log("You cannot remove anything outside of the current directory");
                     break;
                 }
                 removeDir(inputSplit[1]);
@@ -42,11 +42,12 @@ var useStdin = function() {
                 break;
             case 'exit':
                 process.exit();
+                break;
             default:
                 console.log("You Typed: " + input + "this doesn't do anything");
         }
     }    
-}
+};
 console.log('Type "help" for a help menu, or a command to continue');
 
 // help menu
@@ -132,7 +133,8 @@ function removeDir(directory){
                         if(err){
                             console.log("rmdir " + directory + " could not locate directory");
                         } else {
-                            console.log(directory + " was successfully removed")}
+                            console.log(directory + " was successfully removed");
+                        }
                         });
                 } else if (answer == 'n'){
                     console.log(directory + " was not removed");
@@ -140,7 +142,7 @@ function removeDir(directory){
                     console.log("unknown operation, cancelling...");
                 }
             }
-        }
+        };
     });
 }
 
