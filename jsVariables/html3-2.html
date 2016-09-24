@@ -6,7 +6,9 @@
 </head>
 <body>
 <script>
+  // convert between celcius, kelvin, and farenheit
     var CFK = prompt("Would you like to convert FROM Celcius, Farenheit, or Kelvin? (Type C, F, or K)").toUpperCase();
+    // converting from celcius
     if (CFK == "C") {
         var FK = prompt("Convert Celcius TO Farenheit or Kelvin? (type F or K)").toUpperCase();
             if (FK == "F"){
@@ -20,6 +22,7 @@
             } else {
                 document.write("INVALID ENTRY");
             }
+      // converting from farenheit
     } else if (CFK == "F") {
         var CK = prompt("Convert Farenheit TO Celcius or Kelvin? (Type C or K)").toUpperCase();
             if (CK == "C"){
@@ -33,6 +36,7 @@
             } else {
                 document.write("INVALID ENTRY");
             }
+      // converting from kelvin
     } else if (CFK == "K") {
         var CF = prompt("Convert Kelvin TO Celscius or Farenheit? (Type C or F").toUpperCase;
             if (CF == "C"){
@@ -47,6 +51,7 @@
                 document.write("INVALID ENTRY");
             } 
     } else {
+      // invalid input at the beginning
         document.write("YA DONE GOOFED ALREADY");
     }
 </script>

@@ -7,11 +7,13 @@
 <body>
 <script>
 
+// example 12354679521434233 >> 123-5467-9-5214323-3
+
 var num = (prompt("Enter a number: "));
 var dig = num.split("");
 len = dig.length;
 var fin = '';
-for(var i=0; i < len; i++){
+for(var i=0; i < len; i++) {
     var q = dig[i];
     var j = dig[1+i];
         if (q % 2 === 1 && j % 2 === 1) {

@@ -1,3 +1,8 @@
+// various problems to practice algorithmic thinking
+// meticulously documented, but ultimately incomplete
+
+
+
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*///
 //          Problem 1           ////
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*///

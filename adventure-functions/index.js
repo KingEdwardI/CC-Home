@@ -49,15 +49,16 @@ var treasure = [
     "diamond encrusted egg",
     "crystal skull",
     "root password that you lost last week"
-]
+];
 // end elements
 
 
 /******************************
+ * Assignment --
 	TODO: The following three lines of code have a lot of repetition and are
 	ripe for turning into a function! Create a function to handle choosing
 	a random element from an array instead of doing the math each time.
-    *****Done*****
+    *****DONE*****
 ******************************/
 
 // old code
@@ -123,10 +124,11 @@ function adventureStart(){
 }
 
 /******************************
+ * Assignment --
 	TODO: Right now the "new adventure!" button doesn't work. Create a function
 	to bind to that button so that the user can create a new adventure without
 	refreshing the page.
-    *****Done*****
+    *****DONE*****
 ******************************/
 
 // start game on button click
@@ -136,13 +138,14 @@ document.getElementById("new_adventure").onclick = adventureStart;
 document.getElementById("treasure_chest").onclick = getTreasure;
 
 /******************************
+ * Assignment --
 	Optional(TODO): Create several more types of adventures, weapons, actions, etc.
-    *****Done*****
+    *****DONE*****
 
 	Optional(TODO): Allow the user to interact with the story more than just clicking
 	the "new adventure!" button. You'll need to create variables to keep track
 	of state.
-    *****Done*****
+    *****DONE*****
 
 	Optional (TODO) (advanced): Use document.location.hash in a way which allows the
 	user to bookmark a specific story that they like and return to it later.

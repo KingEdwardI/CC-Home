@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript | Flow | Three</title>
+</head>
+<body>
+    <script>
+        
+        var player1Score = parseFloat(prompt("Player 1 Score:"));
+        var player2Score = parseFloat(prompt("Player 2 Score:"));
+        
+        /*
+            Todo: Print out who is winning (higher score).
+        */
+        
+        if (player1Score > player2Score){
+            document.write("Player 1 is winning");
+        } else if (player1Score === player2Score) {
+            document.write("Players are tied");
+        } else {
+            document.write("Player 2 is winning");
+        }
+    </script>
+</body>
+</html>

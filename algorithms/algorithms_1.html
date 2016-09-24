@@ -6,14 +6,36 @@
 </head>
 <body>
 <script>
+/*************************
+  Assignment--
+  write a method to reverse the text of a string
+*************************/
+
 /* Easy Way
+
+ * split a given string
+ * use the built in .reverse() method to reverse the array
+ * join the array back together
+ * log the result to the console
+ 
 var foo = "Hello World".split("");
 var bar = foo.reverse();
 var raboof = bar.join("");
 console.log(raboof);
+
 */
 
-// Hard Way
+/*
+ * Hard Way
+ 
+ * split string 
+ * get the length of the string
+ * declare a new array
+ * push the last element of the first array onto the new array
+ * decrement the count
+ * join the reversed array together
+ 
+ */
 var stuff = "Hello World".split("");
 var count = stuff.length;
 var reverse = [];
@@ -21,7 +43,7 @@ while (count > 0) {
     reverse.push(stuff.pop(count));
     count -= 1;
     var backward = reverse.join("");
-    }
+}
 console.log(backward)
 
 </script>
